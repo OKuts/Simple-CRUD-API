@@ -1,7 +1,8 @@
 import {IncomingMessage, ServerResponse} from "http"
 import {getId} from './utils/getId.js'
 import {sendResponse} from './utils/sendResponse.js'
-import {createUser} from "./controllers/createUser.js";
+import {createUser} from './controllers/createUser.js'
+import {getAllUsers} from './controllers/getAllUsers.js'
 
 export const api = async (req: IncomingMessage, res: ServerResponse) => {
   const method = req.method as string
@@ -12,7 +13,7 @@ export const api = async (req: IncomingMessage, res: ServerResponse) => {
   const id = getId(url)
 
   if (method === 'GET' && !id) {
-    res.end('GET+')
+    await getAllUsers(res)
   } else if (method === 'GET' && id) {
     res.end('GET++++++++++')
   } else if (method === 'POST' && id) {
