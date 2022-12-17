@@ -2,7 +2,7 @@ import {IncomingMessage, ServerResponse} from 'http'
 
 import {settings} from './settings.js'
 import {getId, sendResponse} from './utils/index.js'
-import {createUser, deleteUser, getAllUsers, getOneUser} from './controllers/index.js'
+import {createUser, deleteUser, getAllUsers, getOneUser, updateUser} from './controllers/index.js'
 
 export const api = async (req: IncomingMessage, res: ServerResponse) => {
   const method = req.method as string
@@ -22,7 +22,7 @@ export const api = async (req: IncomingMessage, res: ServerResponse) => {
   } else if (method === 'POST') {
     await createUser(req, res)
   } else if (method === 'PUT' && id !== ' ') {
-    res.end('PUT')
+    await updateUser(id, req, res)
   } else if (method === 'DELETE' && id !== ' ') {
     await deleteUser(id, res)
   } else {
