@@ -7,8 +7,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start:dev": "nodemon --exec ts-node ./src/index.ts",
-    "start:prod": "tsc && node ./dist/index.js"
+    "start:dev": "nodemon --exec ts-node-esm src/index.ts",
+    "start:prod": "tsc && node ./dist/index.js",
+    "start:multi": "tsc && node ./dist/index.js --balancer",
+    "dev:multi": "nodemon --exec npx ts-node-esm src/index.ts --balancer",
+    "lint": "eslint src/**/*.ts"
   },
   "devDependencies": {
     "@types/node": "^18.11.13",

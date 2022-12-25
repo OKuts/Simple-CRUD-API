@@ -1,7 +1,7 @@
 import {IUserProp} from '../interfaces/IUser.js'
 
 export const getClientDataError = (clientData: IUserProp): string => {
-  let clientDataErrors = []
+  const clientDataErrors = []
   if (typeof clientData.username !== 'string' || !clientData.username)
     clientDataErrors.push('username')
   if (typeof clientData.age !== 'number' || !clientData.age) clientDataErrors.push('age')

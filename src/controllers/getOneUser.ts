@@ -1,6 +1,6 @@
 import {ServerResponse} from 'http'
-import {users} from "../data/usersData.js";
-import {sendResponse} from "../utils/index.js";
+import {users} from '../data/usersData.js'
+import {sendResponse} from '../utils/index.js'
 
 export const getOneUser = async (id: string, res: ServerResponse): Promise<void> => {
   const user = users[id] ? {id, ...users[id]} : null

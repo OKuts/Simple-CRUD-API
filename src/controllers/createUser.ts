@@ -1,7 +1,7 @@
 import {IncomingMessage, ServerResponse} from 'http'
 import { v4 as uuidv4 } from 'uuid'
 import {IUserProp} from '../interfaces/IUser.js'
-import {getClientDataError, sendResponse} from "../utils/index.js";
+import {getClientDataError, sendResponse} from '../utils/index.js'
 import {users} from '../data/usersData.js'
 
 export const createUser = async (req: IncomingMessage, res: ServerResponse): Promise<void> => {
