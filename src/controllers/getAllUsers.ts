@@ -1,8 +1,7 @@
-import {ServerResponse} from 'http'
 import {users} from '../data/usersData.js'
-import {sendResponse} from '../utils/index.js'
+import {IMessage} from '../interfaces/IMessage.js'
 
-export const getAllUsers = async (res: ServerResponse): Promise<void> => {
+export const getAllUsers = async (): Promise<IMessage> => {
   const usersArr = Object.keys(users).map(id => ({id, ...users[id]}))
-  await sendResponse(res, 200, usersArr)
+  return {status: 200, data: usersArr}
 }

@@ -1,13 +1,11 @@
-import {ServerResponse} from 'http'
 import {users} from '../data/usersData.js'
-import {sendResponse} from '../utils/index.js'
+import {IMessage} from "../interfaces/IMessage.js";
 
-export const deleteUser = async (id: string, res: ServerResponse): Promise<void> => {
+export const deleteUser = async (id: string): Promise<IMessage> => {
   if (users[id]) {
     delete users[id]
-    res.statusCode = 204
-    res.end()
+    return {status: 200, data: {id, ...users[id]}}
   } else {
-    await sendResponse(res, 404, {error: `user with id-${id} not found`})
+    return {status: 400, message: `user with id-${id} not found`}
   }
 }
