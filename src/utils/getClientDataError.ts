@@ -1,4 +1,4 @@
-import {IUserProp} from '../interfaces/IUser.js'
+import {IUserProp} from '../interfaces/IUsers.js'
 
 export const getClientDataError = async (clientData: IUserProp): Promise<string> => {
   const clientDataErrors = []

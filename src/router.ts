@@ -1,13 +1,14 @@
 import {
   createUser, deleteUser, getAllUsers, getOneUser, updateUser
 } from './controllers/index.js'
-import {IUserProp} from "./interfaces/IUser.js";
+import {IUserProp} from "./interfaces/IUsers.js";
 import {IMessage} from "./interfaces/IMessage.js";
 
 export const router = async (method: string, id: string, body: IUserProp | null): Promise<IMessage> => {
-  if (method === 'GET' && !id) {
+
+  if (method === 'GET' && id === ' ') {
     return await getAllUsers()
-  } else if (method === 'GET' && id) {
+  } else if (method === 'GET' && id && id !== ' ') {
     return await getOneUser(id)
   } else if (method === 'POST' && body) {
     return await createUser(body)

@@ -1,7 +1,8 @@
-import {IUser, IUserProp, IUserRequest} from "./IUser.js";
+import {IUser} from "./IUsers.js";
 
 export interface IMessage {
   status: number,
   message?: string,
-  data?: IUserRequest | IUserRequest[]
+  data?: IUser | IUser[],
+  returnedUsers?: IUser[]
 }
