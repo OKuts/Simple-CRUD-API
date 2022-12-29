@@ -1,5 +1,5 @@
 import {users} from '../data/usersData.js'
-import {IMessage} from "../interfaces/IMessage.js";
+import {IMessage} from '../interfaces/IMessage.js'
 
 export const deleteUser = async (id: string): Promise<IMessage> => {
   const index = users.findIndex(user => user.id === id)

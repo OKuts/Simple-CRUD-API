@@ -1,12 +1,10 @@
 import cluster from 'cluster'
-import {cpus} from 'os'
 import http from 'http'
 
 import {settings} from './settings.js'
 import {listener} from './listener.js'
-import {router} from "./router.js";
-import {masterProcess} from "./processes/masterProcess.js";
-import {workerProcess} from "./processes/workerProcess.js";
+import {masterProcess} from './processes/masterProcess.js'
+import {workerProcess} from './processes/workerProcess.js'
 
 const pid = process.pid
 const PORT = +settings.PORT

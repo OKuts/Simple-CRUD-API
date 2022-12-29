@@ -1,8 +1,8 @@
 import {
   createUser, deleteUser, getAllUsers, getOneUser, updateUser
 } from './controllers/index.js'
-import {IUserProp} from "./interfaces/IUsers.js";
-import {IMessage} from "./interfaces/IMessage.js";
+import {IUserProp} from './interfaces/IUsers.js'
+import {IMessage} from './interfaces/IMessage.js'
 
 export const router = async (method: string, id: string, body: IUserProp | null): Promise<IMessage> => {
 
@@ -17,6 +17,6 @@ export const router = async (method: string, id: string, body: IUserProp | null)
   } else if (method === 'DELETE' && id) {
     return await deleteUser(id)
   } else {
-    return {status: 404, message: "Resource not found"}
+    return {status: 404, message: 'Resource not found'}
   }
 }

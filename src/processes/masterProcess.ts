@@ -5,7 +5,7 @@ import {settings} from '../settings.js'
 export const masterProcess = (): void => {
   if (process.argv.includes('--balancer')) {
     const cpusCount = cpus().length
-    const workers: any[] = []
+    const workers = [] as any[]
     for (let i = 0; i < cpusCount; i++) {
       const worker = cluster.fork({portNum: +settings.PORT + 1 + i})
       workers.push(worker)

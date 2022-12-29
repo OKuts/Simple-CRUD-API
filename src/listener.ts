@@ -5,8 +5,8 @@ import {settings} from './settings.js'
 import {getClientDataError, getId, sendResponse} from './utils/index.js'
 import {balancer} from './balancer/balancer.js'
 import {router} from './router.js'
-import {IMessage} from "./interfaces/IMessage.js";
-import {IUserProp} from "./interfaces/IUsers.js";
+import {IMessage} from './interfaces/IMessage.js'
+import {IUserProp} from './interfaces/IUsers.js'
 
 export const listener = async (req: IncomingMessage, res: ServerResponse) => {
   try {
@@ -37,12 +37,12 @@ export const listener = async (req: IncomingMessage, res: ServerResponse) => {
       balancer(body, id, method)
       if (cluster.workers && Object.entries(cluster.workers).length) {
         for (const worker of Object.values(cluster.workers)) {
-          worker?.once("message", async (msg: IMessage) => {
+          worker?.once('message', async (msg: IMessage) => {
             await sendResponse(res, msg.status, msg.message ? {error: msg.message} : msg.data || [])
           })
         }
       } else {
-        const msg = await router(method, id, body);
+        const msg = await router(method, id, body)
         await sendResponse(res, msg.status, msg.message ? {error: msg.message} : msg.data || [])
       }
     })

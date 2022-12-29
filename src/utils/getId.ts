@@ -6,7 +6,6 @@ import {sendResponse} from './sendResponse.js'
 
 export const getId = async (url: string, res: ServerResponse): Promise<string> => {
   const id = url.split(settings.URL + '/')[1]
-  console.log('id', id && validate(id))
   if (id && validate(id)) {
     return id
   } else {
