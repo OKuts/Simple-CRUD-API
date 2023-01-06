@@ -1,5 +1,5 @@
-import {users} from '../data/usersData.js'
-import {IMessage} from '../interfaces/index.js'
+import {users} from '../data/usersData'
+import {IMessage} from '../interfaces'
 
 
 export const deleteUser = async (id: string): Promise<IMessage> => {

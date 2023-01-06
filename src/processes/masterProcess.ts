@@ -1,6 +1,6 @@
 import cluster, {Worker} from 'cluster'
 import {cpus} from 'os'
-import {settings} from '../settings.js'
+import {settings} from '../settings'
 
 export const masterProcess = (): void => {
   if (process.argv.includes('--balancer')) {

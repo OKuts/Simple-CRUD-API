@@ -1,4 +1,4 @@
-import {IMessage} from '../interfaces/IMessage.js'
-import {users} from '../data/usersData.js'
+import {IMessage} from '../interfaces'
+import {users} from '../data/usersData'
 
 export const getAllUsers = async (): Promise<IMessage> => ({status: 200, data: users})

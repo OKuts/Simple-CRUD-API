@@ -1,3 +1,3 @@
-import {IUser} from '../interfaces/IUsers.js'
+import {IUser} from '../interfaces'
 
 export const users: IUser[] = []

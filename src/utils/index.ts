@@ -1,3 +1,3 @@
-export * from './getClientDataError.js'
-export * from './getId.js'
-export * from './sendResponse.js'
+export * from './getClientDataError'
+export * from './getId'
+export * from './sendResponse'

@@ -1,5 +1,5 @@
-import {users} from '../data/usersData.js'
-import {getOneUser} from './getOneUser.js'
+import {users} from '../data/usersData'
+import {getOneUser} from './getOneUser'
 
 describe('try tests', () => {
   users.push({id: '1', username: 'Alex', age: 53, hobbies: ['js', 'ts']})

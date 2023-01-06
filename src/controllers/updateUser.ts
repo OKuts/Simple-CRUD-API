@@ -1,5 +1,5 @@
-import {users} from '../data/usersData.js'
-import {IUserProp, IMessage} from '../interfaces/index.js'
+import {users} from '../data/usersData'
+import {IUserProp, IMessage} from '../interfaces'
 
 export const updateUser = async (id: string, body: IUserProp): Promise<IMessage> => {
   const index = users.findIndex(user => user.id === id)

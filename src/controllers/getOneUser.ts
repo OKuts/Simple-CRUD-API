@@ -1,5 +1,5 @@
-import {IMessage} from '../interfaces/index.js'
-import {users} from '../data/usersData.js'
+import {IMessage} from '../interfaces'
+import {users} from '../data/usersData'
 
 
 export const getOneUser = async (id: string): Promise<IMessage> => {

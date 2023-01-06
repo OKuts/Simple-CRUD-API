@@ -1,11 +1,11 @@
 import {IncomingMessage, ServerResponse} from 'http'
 import cluster from 'cluster'
 
-import {settings} from './settings.js'
-import {getClientDataError, getId, sendResponse} from './utils/index.js'
-import {balancer} from './balancer/balancer.js'
-import {router} from './router.js'
-import {IMessage, IUserProp} from './interfaces/index.js'
+import {settings} from './settings'
+import {getClientDataError, getId, sendResponse} from './utils'
+import {balancer} from './balancer/balancer'
+import {router} from './router'
+import {IMessage, IUserProp} from './interfaces'
 
 export const listener = async (req: IncomingMessage, res: ServerResponse) => {
   try {

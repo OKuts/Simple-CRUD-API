@@ -1,5 +1,5 @@
-import {router} from '../router.js'
-import {users} from '../data/usersData.js'
+import {router} from '../router'
+import {users} from '../data/usersData'
 export const workerProcess = (): void => {
   process.on('message', async ({method, id, body, updatedUsers}) => {
     if (method) {

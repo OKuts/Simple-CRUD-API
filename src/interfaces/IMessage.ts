@@ -1,4 +1,4 @@
-import {IUser} from './IUsers.js'
+import {IUser} from './'
 
 export interface IMessage {
   status: number,

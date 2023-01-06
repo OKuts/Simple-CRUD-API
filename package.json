@@ -37,6 +37,5 @@
   "main": "index.js",
   "repository": "https://github.com/OKuts/Simple-CRUD-API.git",
   "author": "Ol_Kuts <kuts.ol.vas@gmail.com>",
-  "license": "MIT",
-  "type": "module"
+  "license": "MIT"
 }

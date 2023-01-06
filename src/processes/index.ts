@@ -1,2 +1,2 @@
-export * from './workerProcess.js'
-export * from './masterProcess.js'
+export * from './workerProcess'
+export * from './masterProcess'

@@ -1,7 +1,7 @@
 import {validate} from 'uuid'
 import {ServerResponse} from 'http'
-import {settings} from '../settings.js'
-import {sendResponse} from './sendResponse.js'
+import {settings} from '../settings'
+import {sendResponse} from './sendResponse'
 
 
 export const getId = async (url: string, res: ServerResponse): Promise<string> => {

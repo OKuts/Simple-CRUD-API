@@ -1,2 +1,2 @@
-export * from './IMessage.js'
-export * from './IUsers.js'
+export * from './IMessage'
+export * from './IUsers'
