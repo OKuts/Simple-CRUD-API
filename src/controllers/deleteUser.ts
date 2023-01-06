@@ -1,8 +1,9 @@
 import {users} from '../data/usersData.js'
-import {IMessage} from '../interfaces/IMessage.js'
+import {IMessage} from '../interfaces/index.js'
+
 
 export const deleteUser = async (id: string): Promise<IMessage> => {
-  const index = users.findIndex(user => user.id === id)
+  const index: any = users.findIndex(user => user.id === id)
   if (index !== -1) {
     const out = users.splice(index, 1)
     return {status: 200, data: out[0], returnedUsers: users}

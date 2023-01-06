@@ -3,8 +3,7 @@ import http from 'http'
 
 import {settings} from './settings.js'
 import {listener} from './listener.js'
-import {masterProcess} from './processes/masterProcess.js'
-import {workerProcess} from './processes/workerProcess.js'
+import {masterProcess, workerProcess} from './processes/index.js'
 
 const pid = process.pid
 const PORT = +settings.PORT

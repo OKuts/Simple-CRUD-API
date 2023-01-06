@@ -30,14 +30,14 @@ npm manifest:
   {
     "name": "Simple-CRUD-API",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "index.ts",
     "repository": "https://github.com/OKuts/Simple-CRUD-API.git",
     "author": "Ol_Kuts <kuts.ol.vas@gmail.com>",
     "license": "MIT",
     "type": "module",
     "scripts": {
       "start:dev": "nodemon --exec ts-node ./src/server.ts",
-      "start:prod": "tsc && node ./dist/index.js",
+      "start:prod": "tsc && node ./dist/index.ts",
       "lint": "eslint src/**/*.ts"
     },
     "devDependencies": {

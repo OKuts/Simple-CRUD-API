@@ -1,5 +1,6 @@
+import {IMessage} from '../interfaces/index.js'
 import {users} from '../data/usersData.js'
-import {IMessage} from '../interfaces/IMessage.js'
+
 
 export const getOneUser = async (id: string): Promise<IMessage> => {
   const index = users.findIndex(user => user.id === id)

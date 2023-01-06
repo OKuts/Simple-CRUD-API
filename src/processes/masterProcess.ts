@@ -1,11 +1,11 @@
-import cluster from 'cluster'
+import cluster, {Worker} from 'cluster'
 import {cpus} from 'os'
 import {settings} from '../settings.js'
 
 export const masterProcess = (): void => {
   if (process.argv.includes('--balancer')) {
     const cpusCount = cpus().length
-    const workers = [] as any[]
+    const workers: Worker[] = []
     for (let i = 0; i < cpusCount; i++) {
       const worker = cluster.fork({portNum: +settings.PORT + 1 + i})
       workers.push(worker)

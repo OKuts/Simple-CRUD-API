@@ -1,6 +1,7 @@
 import cluster from 'node:cluster'
-import {IUserProp} from '../interfaces/IUsers.js'
+
 import {getNextWorker} from './getNextWorker.js'
+import {IUserProp} from '../interfaces/index.js'
 
 export const balancer = ( body: IUserProp | null, id: string, method: string ) => {
   const nextWorker = getNextWorker()

@@ -5,8 +5,7 @@ import {settings} from './settings.js'
 import {getClientDataError, getId, sendResponse} from './utils/index.js'
 import {balancer} from './balancer/balancer.js'
 import {router} from './router.js'
-import {IMessage} from './interfaces/IMessage.js'
-import {IUserProp} from './interfaces/IUsers.js'
+import {IMessage, IUserProp} from './interfaces/index.js'
 
 export const listener = async (req: IncomingMessage, res: ServerResponse) => {
   try {

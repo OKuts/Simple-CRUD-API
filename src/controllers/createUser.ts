@@ -1,7 +1,6 @@
 import {v4 as uuidv4} from 'uuid'
-import {IUserProp} from '../interfaces/IUsers.js'
 import {users} from '../data/usersData.js'
-import {IMessage} from '../interfaces/IMessage.js'
+import {IMessage, IUserProp} from '../interfaces/index.js'
 
 export const createUser = async (body: IUserProp): Promise<IMessage> => {
   const id = uuidv4()

@@ -1,8 +1,8 @@
 import {
   createUser, deleteUser, getAllUsers, getOneUser, updateUser
 } from './controllers/index.js'
-import {IUserProp} from './interfaces/IUsers.js'
-import {IMessage} from './interfaces/IMessage.js'
+import {IMessage, IUserProp} from './interfaces/index.js'
+
 
 export const router = async (method: string, id: string, body: IUserProp | null): Promise<IMessage> => {
 
