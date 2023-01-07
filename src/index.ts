@@ -9,7 +9,7 @@ const pid = process.pid
 const PORT = +settings.PORT
 const server = http.createServer(listener)
 
-const run = async () => {
+export const run = async () => {
   if (process.argv.includes('--balancer')) {
     if (cluster.isPrimary) {
       server.listen(PORT, () => {console.log(`Master run on PORT ${PORT}`)})
