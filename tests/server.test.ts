@@ -54,6 +54,10 @@ describe('server tests', () => {
       .expect(404, done)
   })
 
-  users.length
+  afterAll(done => {
+    server.close();
+    users.length = 0
+    done();
+  });
 
 })
