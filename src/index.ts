@@ -1,1 +1,29 @@
-console.log('hello')
+import cluster from 'cluster'
+import http from 'http'
+
+import {settings} from './settings'
+import {listener} from './listener'
+import {masterProcess, workerProcess} from './processes'
+
+const pid = process.pid
+const PORT = +settings.PORT
+const server = http.createServer(listener)
+
+export const run = async () => {
+  if (process.argv.includes('--balancer')) {
+    if (cluster.isPrimary) {
+      server.listen(PORT, () => {console.log(`Master run on PORT ${PORT}`)})
+      masterProcess()
+    } else {
+      const port = process.env['portNum']
+      server.listen(port, () => {console.log(`Worker run on PORT ${port} : ${pid}`)})
+      workerProcess()
+    }
+  } else {
+    server.listen(PORT, () => {
+      console.log(`Server run on PORT ${PORT} : ${pid}`)
+    })
+  }
+}
+
+run()
